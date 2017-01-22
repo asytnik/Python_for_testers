@@ -16,18 +16,19 @@ class create_group(unittest.TestCase):
     
     def test_create_group(self):
         wd = self.wd
-        # open home page
-        wd.get("http://localhost/addressbook/")
-        # login into
-        wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
-        wd.find_element_by_name("pass").click()
-        wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
-        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
-        # open group page
-        wd.find_element_by_link_text("groups").click()
+        self.open_home_page(wd)
+        self.login_into(wd)
+        self.open_group_page(wd)
+        self.create_new_group(wd)
+        self.return_and_logout(wd)
+
+    def return_and_logout(self, wd):
+        # return to group page
+        wd.find_element_by_link_text("group page").click()
+        # logout
+        wd.find_element_by_link_text("Logout").click()
+
+    def create_new_group(self, wd):
         # init group creation
         wd.find_element_by_name("new").click()
         # fill the group form
@@ -42,10 +43,21 @@ class create_group(unittest.TestCase):
         wd.find_element_by_name("group_footer").send_keys("gfjgyfghvjgg")
         # submit creation group
         wd.find_element_by_name("submit").click()
-        # return to group page
-        wd.find_element_by_link_text("group page").click()
-        # logout
-        wd.find_element_by_link_text("Logout").click()
+
+    def open_group_page(self, wd):
+        wd.find_element_by_link_text("groups").click()
+
+    def login_into(self, wd):
+        wd.find_element_by_name("user").click()
+        wd.find_element_by_name("user").clear()
+        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("pass").click()
+        wd.find_element_by_name("pass").clear()
+        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
+
+    def open_home_page(self, wd):
+        wd.get("http://localhost/addressbook/")
 
     def tearDown(self):
         self.wd.quit()
