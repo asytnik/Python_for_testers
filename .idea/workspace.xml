@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5085c630-1cd1-49d6-915c-f8e4143e689b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_group.py" afterPath="$PROJECT_DIR$/create_group.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,14 +20,13 @@
       <file leaf-file-name="create_group.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/create_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="21" column="75" lean-forward="false" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+            <state relative-caret-position="381">
+              <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
                 <element signature="e#710#863#0" expanded="false" />
                 <element signature="e#1682#1728#0" expanded="false" />
-                <element signature="e#1788#2225#0" expanded="false" />
-                <element signature="e#2263#2302#0" expanded="false" />
+                <element signature="e#2314#2353#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -288,27 +286,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_create_group - 2017.01.20 at 19h 10m 48s.xml">
-      <configuration name="Unittests in create_group" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_create_group_py - 2017.01.20 at 21h 53m 38s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_create_group_py - 2017.01.20 at 21h 58m 43s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_create_group_py - 2017.01.20 at 22h 17m 58s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_create_group_py - 2017.01.20 at 22h 41m 42s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_create_group_py - 2017.01.20 at 22h 42m 10s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_create_group_py - 2017.01.21 at 20h 41m 16s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_create_group_py - 2017.01.21 at 20h 42m 23s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
@@ -316,6 +293,27 @@
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
     <history-entry file="py_test_in_create_group_py - 2017.01.22 at 19h 48m 57s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 25m 23s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 29m 12s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 38m 42s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 45m 13s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 49m 11s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 56m 34s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 59m 00s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -328,7 +326,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34796748" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34796748" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -358,8 +356,7 @@
             <element signature="e#24#82#0" expanded="true" />
             <element signature="e#710#863#0" expanded="false" />
             <element signature="e#1682#1728#0" expanded="false" />
-            <element signature="e#1788#2225#0" expanded="false" />
-            <element signature="e#2263#2302#0" expanded="false" />
+            <element signature="e#2314#2353#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -380,8 +377,7 @@
             <element signature="e#24#82#0" expanded="true" />
             <element signature="e#710#863#0" expanded="false" />
             <element signature="e#1682#1728#0" expanded="false" />
-            <element signature="e#1788#2225#0" expanded="false" />
-            <element signature="e#2263#2302#0" expanded="false" />
+            <element signature="e#2314#2353#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -402,8 +398,7 @@
             <element signature="e#24#82#0" expanded="true" />
             <element signature="e#710#863#0" expanded="false" />
             <element signature="e#1682#1728#0" expanded="false" />
-            <element signature="e#1788#2225#0" expanded="false" />
-            <element signature="e#2263#2302#0" expanded="false" />
+            <element signature="e#2314#2353#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -433,14 +428,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="21" column="75" lean-forward="false" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+        <state relative-caret-position="381">
+          <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
             <element signature="e#710#863#0" expanded="false" />
             <element signature="e#1682#1728#0" expanded="false" />
-            <element signature="e#1788#2225#0" expanded="false" />
-            <element signature="e#2263#2302#0" expanded="false" />
+            <element signature="e#2314#2353#0" expanded="false" />
           </folding>
         </state>
       </provider>
