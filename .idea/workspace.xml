@@ -20,8 +20,8 @@
       <file leaf-file-name="create_group.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/create_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-514">
-              <caret line="23" column="80" lean-forward="false" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
+            <state relative-caret-position="296">
+              <caret line="31" column="67" lean-forward="false" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
               </folding>
@@ -283,9 +283,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 21h 48m 34s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_create_group_py - 2017.01.22 at 22h 22m 00s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
@@ -311,6 +308,9 @@
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
     <history-entry file="py_test_in_create_group_py - 2017.01.22 at 23h 05m 21s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 23h 11m 00s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -438,8 +438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-514">
-          <caret line="23" column="80" lean-forward="false" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
+        <state relative-caret-position="296">
+          <caret line="31" column="67" lean-forward="false" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
