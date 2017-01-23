@@ -19,35 +19,35 @@ class create_group(unittest.TestCase):
     def test_create_group(self):
         wd = self.wd
         self.open_home_page(wd)
-        self.login_into(wd)
+        self.login_into(wd, username="admin", password="secret")
         self.open_group_page(wd)
-        self.creation_group_submit(wd)
+        self.creation_group_submit(wd, name="groups", header="jjhjhvbv", footer="gfjgyfghvjgg")
         self.return_to_group_page_logout(wd)
 
     def return_to_group_page_logout(self, wd):
         wd.find_element_by_link_text("group page").click()
         wd.find_element_by_link_text("Logout").click()
 
-    def creation_group_submit(self, wd):
+    def creation_group_submit(self, wd, name, header, footer):
         # init group creation
         wd.find_element_by_name("new").click()
         # fill the group form
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys("groups")
+        wd.find_element_by_name("group_name").send_keys(name)
         wd.find_element_by_name("group_header").click()
         wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys("jjhjhvbv")
+        wd.find_element_by_name("group_header").send_keys(header)
         wd.find_element_by_name("group_footer").click()
         wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys("gfjgyfghvjgg")
+        wd.find_element_by_name("group_footer").send_keys(footer)
         # submit creation group
         wd.find_element_by_name("submit").click()
 
     def open_group_page(self, wd):
         wd.find_element_by_link_text("groups").click()
 
-    def login_into(self, wd, username="admin", password="secret"):
+    def login_into(self, wd, username, password):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
