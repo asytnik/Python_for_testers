@@ -25,9 +25,7 @@ class create_group(unittest.TestCase):
         self.return_to_group_page_logout(wd)
 
     def return_to_group_page_logout(self, wd):
-        # return to group page
         wd.find_element_by_link_text("group page").click()
-        # logout
         wd.find_element_by_link_text("Logout").click()
 
     def creation_group_submit(self, wd):
@@ -49,13 +47,13 @@ class create_group(unittest.TestCase):
     def open_group_page(self, wd):
         wd.find_element_by_link_text("groups").click()
 
-    def login_into(self, wd):
+    def login_into(self, wd, username="admin", password="secret"):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("user").send_keys(username)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
     def open_home_page(self, wd):

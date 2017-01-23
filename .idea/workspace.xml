@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5085c630-1cd1-49d6-915c-f8e4143e689b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_group.py" afterPath="$PROJECT_DIR$/create_group.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="create_group.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/create_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="318">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
               </folding>
@@ -284,12 +283,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 45m 13s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 49m 11s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_create_group_py - 2017.01.22 at 20h 56m 34s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
@@ -314,12 +307,18 @@
     <history-entry file="py_test_in_create_group_py - 2017.01.22 at 22h 34m 40s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 22h 43m 18s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 22h 45m 34s.xml">
+      <configuration name="py.test in create_group.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24450952" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24450952" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -439,8 +438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="318">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
