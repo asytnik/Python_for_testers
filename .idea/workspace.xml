@@ -42,8 +42,8 @@
       <file leaf-file-name="new_contact.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_contact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1210">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="-1449">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
               </folding>
@@ -341,9 +341,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_create_group_py - 2017.01.22 at 23h 05m 21s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_create_group_py - 2017.01.22 at 23h 11m 00s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
@@ -371,12 +368,15 @@
     <history-entry file="py_test_in_new_contact_py - 2017.01.24 at 18h 01m 57s.xml">
       <configuration name="py.test in new_contact.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="py_test_in_new_contact_py - 2017.01.24 at 18h 14m 40s.xml">
+      <configuration name="py.test in new_contact.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24450952" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24450952" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54308945" sideWeight="0.50292826" order="0" side_tool="true" content_ui="tabs" x="0" y="263" width="1366" height="202" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -552,8 +552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1210">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="-1449">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
