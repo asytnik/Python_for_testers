@@ -42,8 +42,8 @@
       <file leaf-file-name="new_contact.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_contact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-154">
-              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="-1605">
+              <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
               <folding>
                 <element signature="e#24#82#0" expanded="true" />
               </folding>
@@ -341,9 +341,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_create_group_py - 2017.01.24 at 16h 33m 09s.xml">
-      <configuration name="py.test in create_group.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_create_group_py - 2017.01.24 at 16h 34m 15s.xml">
       <configuration name="py.test in create_group.py" configurationId="tests" />
     </history-entry>
@@ -371,9 +368,12 @@
     <history-entry file="py_test_in_new_contact_py - 2017.01.24 at 18h 57m 37s.xml">
       <configuration name="py.test in new_contact.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="py_test_in_new_contact_py - 2017.01.24 at 19h 07m 08s.xml">
+      <configuration name="py.test in new_contact.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16178624" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -552,8 +552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="-1605">
+          <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>

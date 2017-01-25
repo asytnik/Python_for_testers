@@ -27,6 +27,19 @@ class new_contact(unittest.TestCase):
         self.enter_credentials(wd)
         self.return_to_HP_logout(wd)
 
+    def test_with_empty_spaces(self):
+        wd = self.wd
+        self.open_home_page(wd)
+        self.login_into(wd, username="admin", password="secret")
+        self.new_contact_creation(wd)
+        self.fill_name_occupation_address(wd, name="ivan", lastname="ivanov", nickname="balda", title="", company="",
+                                          address="")
+        self.fill_phone_number(wd, home="+1 113 456 987 654", mobile="+2 225 456 874 986", work="")
+        self.fill_e_mail_DOB(wd, email1="balda@mail.ru", email2="", dob="1990")
+        self.fill_second_address(wd, address2="")
+        self.enter_credentials(wd)
+        self.return_to_HP_logout(wd)
+
     def return_to_HP_logout(self, wd):
         wd.find_element_by_link_text("home").click()
         wd.find_element_by_link_text("Logout").click()
