@@ -17,12 +17,13 @@ class new_contact(unittest.TestCase):
     def test_new_contact(self):
         wd = self.wd
         self.open_home_page(wd)
-        self.login_into(wd)
+        self.login_into(wd, username="admin", password="secret")
         self.new_contact_creation(wd)
-        self.fill_name_occupation_address(wd)
-        self.fill_phone_number(wd)
-        self.fill_e_mail_DOB(wd)
-        self.fill_second_address(wd)
+        self.fill_name_occupation_address(wd, name="ivan", lastname="ivanov", nickname="balda", title="worker", company="church",
+                                          address="1230 Avenue X, Brooklyn, NY")
+        self.fill_phone_number(wd, home="+1 113 456 987 654", mobile="+2 225 456 874 986", work="+2 325 685 965 784")
+        self.fill_e_mail_DOB(wd, email1="balda@mail.ru", email2="pop2@mail.ru", dob="1990")
+        self.fill_second_address(wd, address2="4554 Neptune Av., Brooklyn,NY")
         self.enter_credentials(wd)
         self.return_to_HP_logout(wd)
 
@@ -33,68 +34,68 @@ class new_contact(unittest.TestCase):
     def enter_credentials(self, wd):
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
-    def fill_second_address(self, wd):
+    def fill_second_address(self, wd, address2):
         wd.find_element_by_name("address2").click()
         wd.find_element_by_name("address2").clear()
-        wd.find_element_by_name("address2").send_keys("4554 Neptune Av., Brooklyn,NY")
+        wd.find_element_by_name("address2").send_keys(address2)
 
-    def fill_e_mail_DOB(self, wd):
+    def fill_e_mail_DOB(self, wd, email1, email2, dob):
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys("balda@mail.ru")
+        wd.find_element_by_name("email").send_keys(email1)
         wd.find_element_by_name("email2").click()
         wd.find_element_by_name("email2").clear()
-        wd.find_element_by_name("email2").send_keys("pop2@mail.ru")
+        wd.find_element_by_name("email2").send_keys(email2)
         if not wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[12]").is_selected():
             wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[12]").click()
         if not wd.find_element_by_xpath("//div[@id='content']/form/select[2]//option[11]").is_selected():
             wd.find_element_by_xpath("//div[@id='content']/form/select[2]//option[11]").click()
         wd.find_element_by_name("byear").click()
         wd.find_element_by_name("byear").clear()
-        wd.find_element_by_name("byear").send_keys("1990")
+        wd.find_element_by_name("byear").send_keys(dob)
 
-    def fill_phone_number(self, wd):
+    def fill_phone_number(self, wd, home, mobile, work):
         wd.find_element_by_name("home").click()
         wd.find_element_by_name("home").clear()
-        wd.find_element_by_name("home").send_keys("+1 113 456 987 654")
+        wd.find_element_by_name("home").send_keys(home)
         wd.find_element_by_name("mobile").click()
         wd.find_element_by_name("mobile").clear()
-        wd.find_element_by_name("mobile").send_keys("+2 225 456 874 986")
+        wd.find_element_by_name("mobile").send_keys(mobile)
         wd.find_element_by_name("work").click()
         wd.find_element_by_name("work").clear()
-        wd.find_element_by_name("work").send_keys("+2 325 685 965 784")
+        wd.find_element_by_name("work").send_keys(work)
         wd.find_element_by_name("fax").click()
 
-    def fill_name_occupation_address(self, wd):
+    def fill_name_occupation_address(self, wd, name, lastname, nickname, title, company, address):
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys("ivan")
+        wd.find_element_by_name("firstname").send_keys(name)
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys("ivanov")
+        wd.find_element_by_name("lastname").send_keys(lastname)
         wd.find_element_by_name("nickname").click()
         wd.find_element_by_name("nickname").clear()
-        wd.find_element_by_name("nickname").send_keys("balda")
+        wd.find_element_by_name("nickname").send_keys(nickname)
         wd.find_element_by_name("title").click()
         wd.find_element_by_name("title").clear()
-        wd.find_element_by_name("title").send_keys("worker")
+        wd.find_element_by_name("title").send_keys(title)
         wd.find_element_by_name("company").click()
         wd.find_element_by_name("company").clear()
-        wd.find_element_by_name("company").send_keys("church")
+        wd.find_element_by_name("company").send_keys(company)
         wd.find_element_by_name("address").click()
         wd.find_element_by_name("address").clear()
-        wd.find_element_by_name("address").send_keys("1230 Avenue X, Brooklyn, NY")
+        wd.find_element_by_name("address").send_keys(address)
 
     def new_contact_creation(self, wd):
         wd.find_element_by_link_text("add new").click()
 
-    def login_into(self, wd):
+    def login_into(self, wd, username, password):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("user").send_keys(username)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
     def open_home_page(self, wd):
