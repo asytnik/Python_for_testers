@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from selenium.webdriver.firefox.webdriver import WebDriver
 import unittest
-from param import Param
+from param import Param, Phone, Email
 
 def is_alert_present(wd):
     try:
@@ -22,8 +22,8 @@ class new_contact(unittest.TestCase):
         self.new_contact_creation(wd)
         self.fill_name_occupation_address(wd, Param(name="ivan", lastname="ivanov", nickname="balda", title="worker", company="church",
                                           address="1230 Avenue X, Brooklyn, NY"))
-        self.fill_phone_number(wd, home="+1 113 456 987 654", mobile="+2 225 456 874 986", work="+2 325 685 965 784")
-        self.fill_e_mail_DOB(wd, email1="balda@mail.ru", email2="pop2@mail.ru", dob="1990")
+        self.fill_phone_number(wd, Phone(home="+1 113 456 987 654", mobile="+2 225 456 874 986", work="+2 325 685 965 784"))
+        self.fill_e_mail_DOB(wd, Email(email1="balda@mail.ru", email2="pop2@mail.ru", dob="1990"))
         self.fill_second_address(wd, address2="4554 Neptune Av., Brooklyn,NY")
         self.enter_credentials(wd)
         self.return_to_HP_logout(wd)
@@ -35,8 +35,8 @@ class new_contact(unittest.TestCase):
         self.new_contact_creation(wd)
         self.fill_name_occupation_address(wd, Param(name="ivan", lastname="ivanov", nickname="balda", title="", company="",
                                           address=""))
-        self.fill_phone_number(wd, home="+1 113 456 987 654", mobile="+2 225 456 874 986", work="")
-        self.fill_e_mail_DOB(wd, email1="balda@mail.ru", email2="", dob="1990")
+        self.fill_phone_number(wd, Phone(home="+1 113 456 987 654", mobile="+2 225 456 874 986", work=""))
+        self.fill_e_mail_DOB(wd, Email(email1="balda@mail.ru", email2="", dob="1990"))
         self.fill_second_address(wd, address2="")
         self.enter_credentials(wd)
         self.return_to_HP_logout(wd)
@@ -53,31 +53,31 @@ class new_contact(unittest.TestCase):
         wd.find_element_by_name("address2").clear()
         wd.find_element_by_name("address2").send_keys(address2)
 
-    def fill_e_mail_DOB(self, wd, email1, email2, dob):
+    def fill_e_mail_DOB(self, wd, param):
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys(email1)
+        wd.find_element_by_name("email").send_keys(param.email1)
         wd.find_element_by_name("email2").click()
         wd.find_element_by_name("email2").clear()
-        wd.find_element_by_name("email2").send_keys(email2)
+        wd.find_element_by_name("email2").send_keys(param.email2)
         if not wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[12]").is_selected():
             wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[12]").click()
         if not wd.find_element_by_xpath("//div[@id='content']/form/select[2]//option[11]").is_selected():
             wd.find_element_by_xpath("//div[@id='content']/form/select[2]//option[11]").click()
         wd.find_element_by_name("byear").click()
         wd.find_element_by_name("byear").clear()
-        wd.find_element_by_name("byear").send_keys(dob)
+        wd.find_element_by_name("byear").send_keys(param.dob)
 
-    def fill_phone_number(self, wd, home, mobile, work):
+    def fill_phone_number(self, wd, param):
         wd.find_element_by_name("home").click()
         wd.find_element_by_name("home").clear()
-        wd.find_element_by_name("home").send_keys(home)
+        wd.find_element_by_name("home").send_keys(param.home)
         wd.find_element_by_name("mobile").click()
         wd.find_element_by_name("mobile").clear()
-        wd.find_element_by_name("mobile").send_keys(mobile)
+        wd.find_element_by_name("mobile").send_keys(param.mobile)
         wd.find_element_by_name("work").click()
         wd.find_element_by_name("work").clear()
-        wd.find_element_by_name("work").send_keys(work)
+        wd.find_element_by_name("work").send_keys(param.work)
         wd.find_element_by_name("fax").click()
 
     def fill_name_occupation_address(self, wd, param):
