@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import pytest
-from param import Param, Phone, Email
-from aplicanter import Aplicant
+
+from fixture.aplicanter import Aplicant
+from model.param import Param, Phone, Email
+
 
 @pytest.fixture
 def apl(request):
