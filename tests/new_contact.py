@@ -1,14 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest
-from fixture.aplicanter import Aplicant
 from model.param import Param, Phone, Email
-
-
-@pytest.fixture
-def apl(request):
-    fixture=Aplicant()
-    request.addfinalizer(fixture.destroy)
-    return fixture
 
 def test_new_contact(apl):
     apl.sescontact.login_into(username="admin", password="secret")
