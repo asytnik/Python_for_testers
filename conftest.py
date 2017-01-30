@@ -9,7 +9,8 @@ def app(request):
     request.addfinalizer(fixture.destroy)
     return fixture
 
+@pytest.fixture
 def apl(request):
-    fixture = Aplicant()
+    fixture =  Aplicant()
     request.addfinalizer(fixture.destroy)
     return fixture
