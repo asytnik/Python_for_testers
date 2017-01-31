@@ -21,4 +21,6 @@ class SesOpnContact:
         wd = self.apl.wd
         wd.find_element_by_link_text("home").click()
         wd.find_element_by_link_text("Logout").click()
+        self.apl.open_home_page()
+
 
