@@ -8,7 +8,9 @@ class OpenSessionHelper:
     def enter_credentials(self):
         wd = self.apl.wd
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        self.apl.open_home_page()
+        # self.apl.open_home_page()
+        wd.find_element_by_link_text("Logout").click()
+
 
     def fill_second_address(self, address2):
         wd = self.apl.wd
