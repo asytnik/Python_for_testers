@@ -22,7 +22,17 @@ class GroupHelper:
         wd.find_element_by_name("group_footer").send_keys(group.footer)
         # submit creation group
         wd.find_element_by_name("submit").click()
-        # self.apl.open_home_page()
+        #self.apl.open_home_page()
+        wd.find_element_by_link_text("Logout").click()
+
+    def delete_first_group(self):
+        wd = self.apl.wd
+        self.open_group_page()
+        # select first group
+        wd.find_element_by_name("selected[]").click()
+        # submit deletion
+        wd.find_element_by_name("delete").click()
+        self.open_group_page()
         wd.find_element_by_link_text("Logout").click()
 
     def open_group_page(self):

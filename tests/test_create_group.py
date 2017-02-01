@@ -8,4 +8,3 @@ def test_create_group(apl):
 def test_create_empty_group(apl):
     apl.ses_group.login_into(username="admin", password="secret")
     apl.group.creation_and_submit(Group(name="", header="", footer=""))
-
