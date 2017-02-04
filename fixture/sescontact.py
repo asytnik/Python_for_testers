@@ -23,4 +23,18 @@ class SesOpnContact:
         wd.find_element_by_link_text("Logout").click()
         # self.apl.open_home_page()
 
+    def del_contact(self):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        wd.find_element_by_id("MassCB").click()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
+        self.apl.open_home_page()
+
+
+
+
+
+
+
 

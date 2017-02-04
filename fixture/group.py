@@ -25,6 +25,28 @@ class GroupHelper:
         #self.apl.open_home_page()
         wd.find_element_by_link_text("Logout").click()
 
+    def edit_group(self, group):
+        wd = self.apl.wd
+        self.open_group_page()
+        # select edition group
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_name("edit").click()
+        # fill new credentials
+        wd.find_element_by_name("group_name").click()
+        wd.find_element_by_name("group_name").clear()
+        wd.find_element_by_name("group_name").send_keys(group.name)
+        wd.find_element_by_name("group_header").click()
+        wd.find_element_by_name("group_header").clear()
+        wd.find_element_by_name("group_header").send_keys(group.header)
+        wd.find_element_by_name("group_footer").click()
+        wd.find_element_by_name("group_footer").clear()
+        wd.find_element_by_name("group_footer").send_keys(group.footer)
+        # confirm edition
+        wd.find_element_by_name("update").click()
+        # return to group page
+        self.open_group_page()
+        wd.find_element_by_link_text("Logout").click()
+
     def delete_first_group(self):
         wd = self.apl.wd
         self.open_group_page()
