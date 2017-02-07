@@ -7,6 +7,7 @@ class FillCredenHelp:
 
     def fill_name_occupation_address(self, param):
         wd = self.apl.wd
+        self.apl.new_contact_creation()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(param.name)
@@ -28,9 +29,9 @@ class FillCredenHelp:
 
     def modify_name_occupation_address(self, param):
         wd = self.apl.wd
-        wd.find_element_by_xpath("//input[contains(@title='Select (empty1 empty2)')]").click()
-        #wd.find_element_by_xpath("//td[@class='center',img[@title='Edit']").click()
-        #wd.find_element_by_name("modifiy").click()
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//img[@title='Details']").click()
+        wd.find_element_by_name("modifiy").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(param.name)

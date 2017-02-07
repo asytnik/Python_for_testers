@@ -15,7 +15,7 @@ class SesOpnContact:
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
-        self.apl.new_contact_creation()
+        # self.apl.new_contact_creation()
 
     def return_to_HP_logout(self):
         wd = self.apl.wd
@@ -26,7 +26,7 @@ class SesOpnContact:
     def del_contact(self):
         wd = self.apl.wd
         self.apl.open_home_page()
-        wd.find_element_by_id("MassCB").click()
+        wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
         self.apl.open_home_page()
