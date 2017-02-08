@@ -7,17 +7,3 @@ class Param:
         self.title=title
         self.company=company
         self.address=address
-
-class Phone:
-
-    def __init__(self, home, mobile, work):
-        self.home=home
-        self.mobile=mobile
-        self.work=work
-
-class Email:
-
-    def __init__(self, email1, email2, dob):
-        self.email1=email1
-        self.email2=email2
-        self.dob=dob

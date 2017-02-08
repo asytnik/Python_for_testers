@@ -21,5 +21,15 @@ class SessionHelper:
         wd.find_element_by_link_text("group page").click()
         wd.find_element_by_link_text("Logout").click()
 
+    def return_to_HP_logout(self):
+        wd = self.apl.wd
+        wd.find_element_by_link_text("home").click()
+        wd.find_element_by_link_text("Logout").click()
+        self.apl.open_home_page()
+
+
+
+
+
 
 

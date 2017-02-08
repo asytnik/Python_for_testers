@@ -1,19 +1,13 @@
 # -*- coding: utf-8 -*-
-from model.param import Param, Phone, Email
+from model.param import Param
 
 def test_new_contact(apl):
-    apl.sescontact.login_into(username="admin", password="secret")
-    apl.fillcredentials.fill_name_occupation_address(Param(name="ivan", lastname="ivanov", nickname="balda", title="worker", company="church",
+    apl.session.login_into(username="admin", password="secret")
+    apl.contact.fill_name_occupation_address(Param(name="ivan", lastname="ivanov", nickname="balda", title="worker", company="church",
                                           address="1230 Avenue X, Brooklyn, NY"))
-    apl.opensession.fill_phone_number(Phone(home="+1 113 456 987 654", mobile="+2 225 456 874 986", work="+2 325 685 965 784"))
-    apl.opensession.fill_e_mail_DOB(Email(email1="balda@mail.ru", email2="pop2@mail.ru", dob="1990"))
-    apl.opensession.fill_second_address(address2="4554 Neptune Av., Brooklyn,NY")
 
 def test_with_empty_spaces(apl):
-    apl.sescontact.login_into(username="admin", password="secret")
-    apl.fillcredentials.fill_name_occupation_address(Param(name="empty1", lastname="empty2", nickname="", title="", company="",
+    apl.session.login_into(username="admin", password="secret")
+    apl.contact.empty_name_occupation_address(Param(name="empty1", lastname="empty2", nickname="", title="", company="",
                                           address=""))
-    apl.opensession.fill_phone_number(Phone(home="", mobile="", work=""))
-    apl.opensession.fill_e_mail_DOB(Email(email1="", email2="", dob=""))
-    apl.opensession.fill_second_address(address2="")
 

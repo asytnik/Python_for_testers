@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 from selenium.webdriver.firefox.webdriver import WebDriver
-from fixture.ses_group import SessionHelper
+from fixture.session import SessionHelper
 from fixture.group import GroupHelper
-from fixture.sescontact import SesOpnContact
-from fixture.fillcredentials import FillCredenHelp
-from fixture.opensession import OpenSessionHelper
+from fixture.contact import ContactHelper
 
 
 class Aplicant:
@@ -12,11 +10,9 @@ class Aplicant:
     def __init__(self):
         self.wd = WebDriver()
         self.wd.implicitly_wait(10)
-        self.ses_group = SessionHelper(self)
+        self.session = SessionHelper(self)
         self.group = GroupHelper(self)
-        self.sescontact=SesOpnContact(self)
-        self.fillcredentials=FillCredenHelp(self)
-        self.opensession=OpenSessionHelper(self)
+        self.contact = ContactHelper(self)
 
     def open_home_page(self):
         wd = self.wd
