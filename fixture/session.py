@@ -16,20 +16,16 @@ class SessionHelper:
         wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
-    #def return_to_group_page_logout(self):
-     #  wd = self.apl.wd
-     #  wd.find_element_by_link_text("group page").click()
-     #  self.logout()
-
-    def logout(self):
+    def return_to_group_page_logout(self):
         wd = self.apl.wd
+        wd.find_element_by_link_text("group page").click()
         wd.find_element_by_link_text("Logout").click()
 
-    #def return_to_HP_logout(self):
-    #   wd = self.apl.wd
-    #   wd.find_element_by_link_text("home").click()
-    #   self.logout()
-    #   self.apl.open_home_page()
+    def return_to_HP_logout(self):
+        wd = self.apl.wd
+        wd.find_element_by_link_text("home").click()
+        wd.find_element_by_link_text("Logout").click()
+        self.apl.open_home_page()
 
 
 
