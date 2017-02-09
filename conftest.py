@@ -10,7 +10,7 @@ def apl(request):
     if fixture is None:
         fixture = Aplicant()
     else:
-        if not fixture.is_valid:
+        if not fixture.is_valid():
             fixture = Aplicant()
     fixture.session.ensure_login_into(username="admin", password="secret")
     return fixture
