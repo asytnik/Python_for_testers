@@ -40,6 +40,7 @@ class ContactHelper:
 
     def modify_name_occupation_address(self, param):
         wd = self.apl.wd
+        self.apl.open_home_page()
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//img[@title='Details']").click()
         wd.find_element_by_name("modifiy").click()
@@ -50,7 +51,6 @@ class ContactHelper:
     def enter_credentials(self):
         wd = self.apl.wd
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        wd.find_element_by_link_text("Logout").click()
 
     def del_contact(self):
         wd = self.apl.wd
@@ -58,8 +58,3 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
-        wd.find_element_by_link_text("Logout").click()
-
-
-
-
