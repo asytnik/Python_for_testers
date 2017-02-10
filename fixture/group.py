@@ -5,7 +5,7 @@ class GroupHelper:
     def __init__(self, Apl):
         self.apl = Apl
 
-    def creation_and_submit(self, group):
+    def creation_group(self, group):
         wd = self.apl.wd
         self.open_group_page()
         # init group creation
@@ -14,7 +14,6 @@ class GroupHelper:
         # submit creation group
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("group page").click()
-        # self.logout()
 
     def fill_group_form(self, group):
         wd = self.apl.wd
@@ -41,7 +40,6 @@ class GroupHelper:
         wd.find_element_by_name("update").click()
         # return to group page
         self.open_group_page()
-        # wd.find_element_by_link_text("Logout").click()
 
     def select_first_group(self):
         wd = self.apl.wd
@@ -54,9 +52,12 @@ class GroupHelper:
         # submit deletion
         wd.find_element_by_name("delete").click()
         self.open_group_page()
-        # self.logout()
-        # wd.find_element_by_link_text("Logout").click()
 
     def open_group_page(self):
         wd = self.apl.wd
         wd.find_element_by_link_text("groups").click()
+
+    def count(self):
+        wd = self.apl.wd
+        self.open_group_page()
+        return len(wd.find_elements_by_name("selected[]"))
