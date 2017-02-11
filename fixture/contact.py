@@ -46,7 +46,6 @@ class ContactHelper:
 
     def select_modify_contact(self):
         wd = self.apl.wd
-        # self.apl.open_home_page()
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//img[@title='Details']").click()
         wd.find_element_by_name("modifiy").click()
@@ -61,3 +60,10 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
+
+    def counter(self):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        return len(wd.find_elements_by_name("selected[]"))
+
+
