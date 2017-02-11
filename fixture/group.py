@@ -67,4 +67,13 @@ class GroupHelper:
         self.open_group_page()
         self.select_first_group()
         wd.find_element_by_name("edit").click()
+        # wd.find_elements_by_name("group_name")
+        return len(wd.find_elements_by_name("group_name"))
+
+    def check_fill_form(self):
+        wd = self.apl.wd
+        self.open_group_page()
+        self.select_first_group()
+        wd.find_element_by_name("edit").click()
+        wd.find_element_by_name("group_name").clear()
         return len(wd.find_elements_by_name("group_name"))
