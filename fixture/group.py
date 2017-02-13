@@ -62,18 +62,20 @@ class GroupHelper:
         self.open_group_page()
         return len(wd.find_elements_by_name("selected[]"))
 
-    def check_empty_form(self):
+    def clean_field_form(self):
         wd = self.apl.wd
         self.open_group_page()
         self.select_first_group()
         wd.find_element_by_name("edit").click()
-        # wd.find_elements_by_name("group_name")
-        return len(wd.find_elements_by_name("group_name"))
+        wd.find_element_by_name("group_name").click()
+        wd.find_element_by_name("group_name").clear()
+        wd.find_element_by_name("update").click()
+        wd.find_element_by_link_text("group page").click()
 
     def check_fill_form(self):
         wd = self.apl.wd
         self.open_group_page()
         self.select_first_group()
         wd.find_element_by_name("edit").click()
-        wd.find_element_by_name("group_name").clear()
+        # wd.find_element_by_name("group_name").click()
         return len(wd.find_elements_by_name("group_name"))
