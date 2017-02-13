@@ -5,9 +5,13 @@ class ContactHelper:
     def __init__(self, Apl):
         self.apl = Apl
 
+    def new_contact_creation(self):
+        wd = self.apl.wd
+        wd.find_element_by_link_text("add new").click()
+
     def fill_credentials(self, param):
         wd = self.apl.wd
-        self.apl.new_contact_creation()
+        self.new_contact_creation()
         self.fill_the_form(param)
         self.enter_credentials()
 
@@ -29,7 +33,7 @@ class ContactHelper:
 
     def empty_spaces(self, param):
         wd = self.apl.wd
-        self.apl.new_contact_creation()
+        self.new_contact_creation()
         self.fill_the_form(param)
         self.enter_credentials()
 
@@ -39,14 +43,16 @@ class ContactHelper:
 
     def del_first_contact(self):
         wd = self.apl.wd
-        self.apl.open_home_page()
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_link_text("home")) > 0):
+            self.apl.open_home_page()
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
 
     def counter(self):
         wd = self.apl.wd
-        self.apl.open_home_page()
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_link_text("home")) > 0):
+            self.apl.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))
 
     def check_contact_form(self):
@@ -56,7 +62,8 @@ class ContactHelper:
 
     def choice_modify_contact(self):
         wd = self.apl.wd
-        self.apl.open_home_page()
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_link_text("home")) > 0):
+            self.apl.open_home_page()
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//img[@title='Details']").click()
         wd.find_element_by_name("modifiy").click()
@@ -77,6 +84,3 @@ class ContactHelper:
         # submit modification
         wd.find_element_by_name("update").click()
         self.apl.open_home_page()
-
-
-
