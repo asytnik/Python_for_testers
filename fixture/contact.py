@@ -43,44 +43,12 @@ class ContactHelper:
 
     def del_first_contact(self):
         wd = self.apl.wd
-        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_link_text("home")) > 0):
-            self.apl.open_home_page()
+        self.apl.open_home_page()
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
 
-    def counter(self):
+    def contact_counter(self):
         wd = self.apl.wd
-        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_link_text("home")) > 0):
-            self.apl.open_home_page()
+        self.apl.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))
-
-    def check_contact_form(self):
-        wd = self.apl.wd
-        self.choice_modify_contact()
-        return len(wd.find_elements_by_name("firstname"))
-
-    def choice_modify_contact(self):
-        wd = self.apl.wd
-        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_link_text("home")) > 0):
-            self.apl.open_home_page()
-        wd.find_element_by_name("selected[]").click()
-        wd.find_element_by_xpath("//img[@title='Details']").click()
-        wd.find_element_by_name("modifiy").click()
-
-    def clean_contact_form(self):
-        wd = self.apl.wd
-        self.choice_modify_contact()
-        wd.find_element_by_name("firstname").click()
-        wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("update").click()
-        self.apl.open_home_page()
-
-    def modify_contact_data(self, new_param_data):
-        wd = self.apl.wd
-        self.choice_modify_contact()
-        # fill modify form
-        self.fill_the_form(new_param_data)
-        # submit modification
-        wd.find_element_by_name("update").click()
-        self.apl.open_home_page()
