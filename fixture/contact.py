@@ -5,13 +5,9 @@ class ContactHelper:
     def __init__(self, Apl):
         self.apl = Apl
 
-    def new_contact_creation(self):
+    def new_contact_creation(self, param):
         wd = self.apl.wd
         wd.find_element_by_link_text("add new").click()
-
-    def fill_credentials(self, param):
-        wd = self.apl.wd
-        self.new_contact_creation()
         self.fill_the_form(param)
         self.enter_credentials()
 
@@ -33,9 +29,19 @@ class ContactHelper:
 
     def empty_spaces(self, param):
         wd = self.apl.wd
-        self.new_contact_creation()
+        wd.find_element_by_link_text("add new").click()
         self.fill_the_form(param)
         self.enter_credentials()
+
+    def edit_first_contact(self, new_contact_data):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[7]/a/img").click()
+        wd.find_element_by_name("modifiy").click()
+        self.fill_the_form(new_contact_data)
+        wd.find_element_by_name("update").click()
+        self.apl.open_home_page()
 
     def enter_credentials(self):
         wd = self.apl.wd
