@@ -65,10 +65,23 @@ class ContactHelper:
         wd = self.apl.wd
         self.apl.open_home_page()
         contacts = []
-        for element in wd.find_elements_by_name("entry"):
-            text = element.text
-            id = element.find_element_by_name("selected[]").get_attribute("id")
-            firstname=
-            lastname=
-            contacts.append(Param(firstname=text, lastname=text, id=id))
+        for row in wd.find_elements_by_name("entry"):
+            id = row.find_element_by_name("selected[]").get_attribute("id")
+            text_1 = row.find_element_by_xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[2]").text
+            text_2 = row.find_element_by_xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[3]").text
+            contacts.append(Param(id=id, lastname=text_1, firstname=text_2))
         return contacts
+
+
+            #for row in wd.find_elements_by_name("entry"):
+                #text_1 = row.find_element_by_css_selector("td:nth-child(3)").text
+
+            # cells = row.find_elements_by_tag_name("td")
+            #cells[1].text вернёт текст второй ячейки
+
+            # cells = row.find_elements_by_tag_name("td")
+            # text = element.text
+            # lastname = cells[1].text
+            # cells = row.find_elements_by_tag_name("td")
+
+
