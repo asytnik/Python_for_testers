@@ -19,7 +19,6 @@ class GroupHelper:
         self.group_cache = None
 
     def fill_group_form(self, group):
-        wd = self.apl.wd
         self.edit_fill_form("group_name", group.name)
         self.edit_fill_form("group_header", group.header)
         self.edit_fill_form("group_footer", group.footer)
@@ -31,10 +30,13 @@ class GroupHelper:
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
 
-    def edit_first_group(self, new_group_data):
+    def edit_first_group(self):
+        self.edit_group_by_index(0)
+
+    def edit_group_by_index(self, index, new_group_data):
         wd = self.apl.wd
         self.open_group_page()
-        self.select_first_group()
+        self.select_group_by_index(index)
         # open modification form
         wd.find_element_by_name("edit").click()
         # fill modification
@@ -49,10 +51,17 @@ class GroupHelper:
         wd = self.apl.wd
         wd.find_element_by_name("selected[]").click()
 
+    def select_group_by_index(self, index):
+        wd = self.apl.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
     def delete_first_group(self):
+        self.delete_group_by_index(0)
+
+    def delete_group_by_index(self, index):
         wd = self.apl.wd
         self.open_group_page()
-        self.select_first_group()
+        self.select_group_by_index(index)
         # submit deletion
         wd.find_element_by_name("delete").click()
         self.open_group_page()

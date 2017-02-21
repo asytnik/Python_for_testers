@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-
 from model.param import Param
+
 
 class ContactHelper:
 
@@ -37,10 +37,12 @@ class ContactHelper:
         self.enter_credentials()
         self.contact_cache = None
 
-    def edit_first_contact(self, new_contact_data):
+    def edit_first_contact(self):
+        self.edit_contact_by_index(0)
+
+    def edit_contact_by_index(self, index, new_contact_data):
         wd = self.apl.wd
-        self.apl.open_home_page()
-        wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_index(index)
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[7]/a/img").click()
         wd.find_element_by_name("modifiy").click()
         self.fill_the_form(new_contact_data)
@@ -53,12 +55,24 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
     def del_first_contact(self):
+        self.del_contact_by_index(0)
+
+    def del_contact_by_index(self, index):
         wd = self.apl.wd
-        self.apl.open_home_page()
-        wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_index(index)
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
         self.contact_cache = None
+
+    def select_first_contact(self):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        wd.find_element_by_name("selected[]").click()
+
+    def select_contact_by_index(self, index):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        wd.find_elements_by_name("selected[]")[index].click()
 
     def contact_counter(self):
         wd = self.apl.wd
