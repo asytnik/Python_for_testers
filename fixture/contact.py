@@ -12,6 +12,7 @@ class ContactHelper:
         wd.find_element_by_link_text("add new").click()
         self.fill_the_form(param)
         self.enter_credentials()
+        self.contact_cache = None
 
     def fill_the_form(self, param):
         wd = self.apl.wd
@@ -34,6 +35,7 @@ class ContactHelper:
         wd.find_element_by_link_text("add new").click()
         self.fill_the_form(param)
         self.enter_credentials()
+        self.contact_cache = None
 
     def edit_first_contact(self, new_contact_data):
         wd = self.apl.wd
@@ -44,6 +46,7 @@ class ContactHelper:
         self.fill_the_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.apl.open_home_page()
+        self.contact_cache = None
 
     def enter_credentials(self):
         wd = self.apl.wd
@@ -55,19 +58,23 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
+        self.contact_cache = None
 
     def contact_counter(self):
         wd = self.apl.wd
         self.apl.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))
 
+    contact_cache = None
+
     def get_contact_list(self):
-        wd = self.apl.wd
-        self.apl.open_home_page()
-        contacts = []
-        for row in wd.find_elements_by_name("entry"):
-            id = row.find_element_by_name("selected[]").get_attribute("id")
-            cell_1 = row.find_element_by_css_selector("td:nth-child(2)").text
-            cell_2 = row.find_element_by_css_selector("td:nth-child(3)").text
-            contacts.append(Param(id=id, lastname=cell_1, firstname=cell_2))
-        return contacts
+        if self.contact_cache is None:
+            wd = self.apl.wd
+            self.apl.open_home_page()
+            self.contact_cache = []
+            for row in wd.find_elements_by_name("entry"):
+                id = row.find_element_by_name("selected[]").get_attribute("id")
+                cell_1 = row.find_element_by_css_selector("td:nth-child(2)").text
+                cell_2 = row.find_element_by_css_selector("td:nth-child(3)").text
+                self.contact_cache.append(Param(id=id, lastname=cell_1, firstname=cell_2))
+        return list(self.contact_cache)
