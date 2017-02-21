@@ -69,20 +69,5 @@ class ContactHelper:
             id = row.find_element_by_name("selected[]").get_attribute("id")
             cell_1 = row.find_element_by_css_selector("td:nth-child(2)").text
             cell_2 = row.find_element_by_css_selector("td:nth-child(3)").text
-            # cell_1 = row.find_element_by_xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[2]").text
-            # cell_2 = row.find_element_by_xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[3]").text
             contacts.append(Param(id=id, lastname=cell_1, firstname=cell_2))
         return contacts
-
-
-            #for row in wd.find_elements_by_name("entry"):
-                #text_1 = row.find_element_by_css_selector("td:nth-child(3)").text
-
-            # cells = row.find_elements_by_tag_name("td")
-            #cells[1].text вернёт текст второй ячейки
-
-            # cells = row.find_elements_by_tag_name("td")
-            # text = element.text
-            # lastname = cells[1].text
-
-

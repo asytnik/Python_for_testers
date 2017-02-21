@@ -9,7 +9,7 @@ def test_create_contact(apl):
     new_contacts = apl.contact.get_contact_list()
     assert len(old_contacts) + 1 == len(new_contacts)
     old_contacts.append(contact)
-    assert sorted(old_contacts, key=Param.id_lstnm_fstnm) == sorted(new_contacts, key=Param.id_lstnm_fstnm)
+    assert sorted(old_contacts, key=Param.max_or_id) == sorted(new_contacts, key=Param.max_or_id)
 
 
 

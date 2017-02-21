@@ -18,19 +18,10 @@ class Param:
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) \
-        and (self.lastname is None or other.lastname is None or self.lastname == other.lastname) \
-        and (self.firstname is None or other.firstname is None or self.firstname == other.firstname)
+        and self.lastname == other.lastname and self.firstname == other.firstname
 
-    def id_lstnm_fstnm(self):
-        if self.lastname:
-            return self.lastname
-        elif self.firstname:
-            return self.firstname
-        elif self.id:
+    def max_or_id(self):
+        if self.id:
             return int(self.id)
         else:
             return maxsize
-
-
-
-
