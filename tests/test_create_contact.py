@@ -21,7 +21,3 @@ def test_with_empty_spaces(apl):
     assert len(old_contacts) + 1 == len(new_contacts)
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Param.max_or_id) == sorted(new_contacts, key=Param.max_or_id)
-
-
-
-

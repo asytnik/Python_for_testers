@@ -7,7 +7,7 @@ def test_modif_cont(apl):
         apl.contact.new_contact_creation(Param(firstname="old ivan", lastname="old ivanov"))
     old_contacts = apl.contact.get_contact_list()
     index = randrange(len(old_contacts))
-    contacts = Param(firstname="mod ivan", lastname="mod ivanov")
+    contacts = Param(firstname="XXXXX", lastname="YYYYYY")
     contacts.id = old_contacts[index].id
     apl.contact.edit_contact_by_index(index, contacts)
     new_contacts = apl.contact.get_contact_list()
