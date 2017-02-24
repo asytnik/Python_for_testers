@@ -42,13 +42,10 @@ class ContactHelper:
 
     def edit_contact_by_index(self, index, new_contact_data):
         wd = self.apl.wd
-        # self.select_contact_by_index(index)
-        # row = wd.find_elements_by_name("entry")[index]
-        row = wd.find_elements_by_tag_name("tr")[index]
+        # self.apl.open_home_page()
+        row = wd.find_elements_by_name("entry")[index]
         cell = row.find_elements_by_tag_name("td")
-        cell[7].index = wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[]/td[]/a/img").click()
-        # wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[7]/a/img").click()
-        # wd.find_element_by_name("modifiy").click()
+        cell[7].find_element_by_tag_name("a").click()
         self.fill_the_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.apl.open_home_page()
