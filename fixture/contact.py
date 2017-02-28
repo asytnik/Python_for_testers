@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from model.param import Param
 
-
 class ContactHelper:
 
     def __init__(self, Apl):
@@ -18,10 +17,13 @@ class ContactHelper:
         wd = self.apl.wd
         self.edit_contact_data("firstname", param.firstname)
         self.edit_contact_data("lastname", param.lastname)
-        self.edit_contact_data("nickname", param.nickname)
-        self.edit_contact_data("title", param.title)
-        self.edit_contact_data("company", param.company)
         self.edit_contact_data("address", param.address)
+        self.edit_contact_data("home", param.homephone)
+        self.edit_contact_data("mobile", param.mobilephone)
+        self.edit_contact_data("work", param.workphone)
+        self.edit_contact_data("email", param.email)
+        self.edit_contact_data("email2", param.email2)
+        self.edit_contact_data("email3", param.email3)
 
     def edit_contact_data(self, field_name, text):
         wd = self.apl.wd
@@ -42,18 +44,29 @@ class ContactHelper:
 
     def edit_contact_by_index(self, index, new_contact_data):
         wd = self.apl.wd
-        # self.apl.open_home_page()
-        row = wd.find_elements_by_name("entry")[index]
-        cell = row.find_elements_by_tag_name("td")
-        cell[7].find_element_by_tag_name("a").click()
+        self.open_contact_to_edit_by_index(index)
         self.fill_the_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.apl.open_home_page()
         self.contact_cache = None
 
+    def open_contact_to_edit_by_index(self, index):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        row = wd.find_elements_by_name("entry")[index]
+        cell = row.find_elements_by_tag_name("td")
+        cell[7].find_element_by_tag_name("a").click()
+
+    def open_contact_to_view_by_index(self, index):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        row = wd.find_elements_by_name("entry")[index]
+        cell = row.find_elements_by_tag_name("td")
+        cell[6].find_element_by_tag_name("a").click()
+
     def enter_credentials(self):
         wd = self.apl.wd
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        wd.find_element_by_name("submit").click()
 
     def del_first_contact(self):
         self.del_contact_by_index(0)
@@ -89,7 +102,27 @@ class ContactHelper:
             self.contact_cache = []
             for row in wd.find_elements_by_name("entry"):
                 id = row.find_element_by_name("selected[]").get_attribute("id")
-                cell_1 = row.find_element_by_css_selector("td:nth-child(2)").text
-                cell_2 = row.find_element_by_css_selector("td:nth-child(3)").text
-                self.contact_cache.append(Param(id=id, lastname=cell_1, firstname=cell_2))
+                cell = row.find_elements_by_tag_name("td")
+                lastname = cell[1].text
+                firstname = cell[2].text
+                address = cell[3].text
+                # cell_5 = row.find_elements_by_tag_name("td")
+                all_phones = cell[5].text
+                all_email = cell[4].text
+                self.contact_cache.append(Param(id=id, lastname=lastname, firstname=firstname,
+                                                address=address, all_phones_from_home_page=all_phones,
+                                                email=all_email[0], email2=all_email[1], email3=all_email[2]))
         return list(self.contact_cache)
+
+    def get_contact_info_from_edit_page(self, index):
+        wd = self.apl.wd
+        self.open_contact_to_edit_by_index(index)
+        id = wd.find_element_by_name("id").get_attribute("value")
+        firstname = wd.find_element_by_name("firstname").get_attribute("value")
+        lastname = wd.find_element_by_name("lastname").get_attribute("value")
+        address = wd.find_element_by_name("address").text
+        homephone = wd.find_element_by_name("home").get_attribute("value")
+        mobilephone = wd.find_element_by_name("mobile").get_attribute("value")
+        workphone = wd.find_element_by_name("work").get_attribute("value")
+        return Param(id=id, firstname=firstname, lastname=lastname, address=address,
+                     homephone=homephone, mobilephone=mobilephone, workphone=workphone)
