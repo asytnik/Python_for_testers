@@ -111,7 +111,7 @@ class ContactHelper:
                 all_email = cell[4].text
                 self.contact_cache.append(Param(id=id, lastname=lastname, firstname=firstname,
                                                 address=address, all_phones_from_home_page=all_phones,
-                                                email=all_email[0], email2=all_email[1], email3=all_email[2]))
+                                                all_email_from_home_page=all_email))
         return list(self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
@@ -124,5 +124,9 @@ class ContactHelper:
         homephone = wd.find_element_by_name("home").get_attribute("value")
         mobilephone = wd.find_element_by_name("mobile").get_attribute("value")
         workphone = wd.find_element_by_name("work").get_attribute("value")
+        email = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
         return Param(id=id, firstname=firstname, lastname=lastname, address=address,
-                     homephone=homephone, mobilephone=mobilephone, workphone=workphone)
+                     homephone=homephone, workphone=workphone, mobilephone=mobilephone,
+                     email=email, email2=email2, email3=email3)

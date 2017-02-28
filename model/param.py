@@ -6,7 +6,7 @@ class Param:
 
     def __init__(self, id=None, lastname=None, firstname=None,  address=None, homephone=None,
                  mobilephone=None, workphone=None, email=None, email2=None, email3=None,
-                 all_phones_from_home_page=None):
+                 all_phones_from_home_page=None, all_email_from_home_page=None):
         self.firstname = firstname
         self.lastname = lastname
         self.address = address
@@ -17,6 +17,7 @@ class Param:
         self.email = email
         self.email2 = email2
         self.email3 = email3
+        self.all_email_from_home_page = all_email_from_home_page
         self.id = id
 
     def __repr__(self):
