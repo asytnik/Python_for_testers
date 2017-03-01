@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from sys import maxsize
 
 class Param:
@@ -21,11 +20,12 @@ class Param:
         self.id = id
 
     def __repr__(self):
-        return "%s:%s:%s" % (self.id, self.lastname, self.firstname)
+        return "%s:%s:%s:%s:%s:%s" % (self.id, self.lastname, self.firstname, self.address, self.email, self.homephone)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) \
-           and self.lastname == other.lastname and self.firstname == other.firstname
+           and self.lastname == other.lastname and self.firstname == other.firstname \
+              and  self.address == other.address and self.email == other.email and self.homephone == other.homephone
 
     def max_or_id(self):
         if self.id:
