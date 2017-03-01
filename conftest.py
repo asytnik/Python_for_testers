@@ -7,13 +7,13 @@ fixture = None
 @pytest.fixture
 def apl(request):
     global fixture
+    browser = request.config.getoption("--browser")
+    base_url = request.config.getoption("--baseUrl")
     if fixture is None:
-        browser = request.config.getoption("--browser")
-        base_url = request.config.getoption("--baseUrl")
         fixture = Aplicant(browser=browser, base_url=base_url)
     else:
         if not fixture.is_valid():
-            fixture = Aplicant()
+            fixture = Aplicant(browser=browser, base_url=base_url)
     fixture.session.ensure_login_into(username="admin", password="secret")
     return fixture
 
