@@ -33,7 +33,7 @@ class Aplicant:
         wd = self.wd
         if (wd.current_url.endswith("addressbook/") and len(wd.find_elements_by_link_text("home")) > 0):
             return
-        wd.get("http://localhost/addressbook/")
+        wd.get(self.base_url)
 
     def destroy(self):
         self.wd.quit()
