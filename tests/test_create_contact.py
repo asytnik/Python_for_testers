@@ -14,7 +14,7 @@ def random_address(prefix, maxlen):
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 def random_phone_digits(prefix, maxlen):
-    symbols = "+" + string.digits + "()"*10 + "("*5 + ")"*5 + "-"*5 + " "*10
+    symbols = string.digits + "()"*10 + "("*5 + ")"*5 + "-"*5 + " "*10
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 def random_email_address(prefix, maxlen):
@@ -24,8 +24,8 @@ def random_email_address(prefix, maxlen):
 testdata = [Param(lastname="", firstname="", address="", homephone="", mobilephone="", workphone="",
                   email="", email2="", email3="")] + [
     Param(lastname=random_name("lastname",15), firstname=random_name("firstname",15),
-          address=random_address("address",50), homephone=random_phone_digits("homephone",15),
-          mobilephone=random_phone_digits("mobilephone",15), workphone=random_phone_digits("workphone",15),
+          address=random_address("address",50), homephone=random_phone_digits("+",15),
+          mobilephone=random_phone_digits("+",15), workphone=random_phone_digits("workphone",15),
           email=random_email_address("email",25), email2=random_email_address("email2",25), email3=random_email_address("email3",25))
     for i in range(5)]
 
