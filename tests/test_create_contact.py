@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-import pytest
 from model.param import Param
-from data.contacts import constant as testdata
 
-@pytest.mark.parametrize("param", testdata, ids=[repr(x) for x in testdata])
-def test_create_contact(apl,param):
+def test_create_contact(apl,data_contacts):
+    param = data_contacts
     old_contacts = apl.contact.get_contact_list()
     apl.contact.new_contact_creation(param)
     new_contacts = apl.contact.get_contact_list()
