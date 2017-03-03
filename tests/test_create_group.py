@@ -2,8 +2,8 @@
 from model.group import Group
 
 
-def test_create_group(apl, data_groups):
-    group = data_groups
+def test_create_group(apl, json_groups):
+    group = json_groups
     old_groups = apl.group.get_group_list()
     apl.group.creation_group(group)
     new_groups = apl.group.get_group_list()
