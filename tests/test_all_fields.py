@@ -17,7 +17,10 @@ def clear(s):
     return re.sub("[() -]", "", s)
 
 def merge_email_like_home_page(param):
-    return "\n".join([param.email, param.email2, param.email3])
+    return "\n".join(filter(lambda x: x != "",
+                            map(lambda x: clear(x),
+                                filter(lambda x: x is not None,
+                                   [param.email, param.email2, param.email3]))))
 
 def merge_phones_like_home_page(param):
     return "\n".join(filter(lambda x: x != "",
