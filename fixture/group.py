@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from model.group import Group
 
 class GroupHelper:
@@ -55,6 +54,13 @@ class GroupHelper:
         wd = self.apl.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+    def select_group_by_id(self, id):
+        wd = self.apl.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+       # for element in wd.find_elements_by_css_selector("span.group"):
+       #     id = element.find_element_by_name("selected[]").get_attribute("value")
+       # return id
+
     def delete_first_group(self):
         self.delete_group_by_index(0)
 
@@ -62,6 +68,15 @@ class GroupHelper:
         wd = self.apl.wd
         self.open_group_page()
         self.select_group_by_index(index)
+        # submit deletion
+        wd.find_element_by_name("delete").click()
+        self.open_group_page()
+        self.group_cache = None
+
+    def delete_group_by_id(self, id):
+        wd = self.apl.wd
+        self.open_group_page()
+        self.select_group_by_id(id)
         # submit deletion
         wd.find_element_by_name("delete").click()
         self.open_group_page()
