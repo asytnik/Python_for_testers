@@ -100,19 +100,21 @@ class ContactHelper:
             wd = self.apl.wd
             self.apl.open_home_page()
             self.contact_cache = []
+            # list = []
             for row in wd.find_elements_by_name("entry"):
+                # id = int(element.find_element_by_name("selected[]").get_attribute("value")) -- alt --
                 id = row.find_element_by_name("selected[]").get_attribute("id")
                 cell = row.find_elements_by_tag_name("td")
                 lastname = cell[1].text
                 firstname = cell[2].text
                 address = cell[3].text
-                # cell_5 = row.find_elements_by_tag_name("td")
+                # cell_5 = row.find_elements_by_tag_name("td") -- alt --
                 all_phones = cell[5].text
                 all_email = cell[4].text
                 self.contact_cache.append(Param(id=id, lastname=lastname, firstname=firstname,
                                                 address=address, all_phones_from_home_page=all_phones,
                                                 all_email_from_home_page=all_email))
-        return list(self.contact_cache)
+        return (self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
         wd = self.apl.wd

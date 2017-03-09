@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+# import pymysql.cursors
 import mysql.connector
 from model.group import Group
+from model.param import Param
 
 class DbFixture:
 
@@ -9,6 +11,7 @@ class DbFixture:
         self.name = name
         self.user = user
         self.password = password
+        # self.connection = pymysql.connect(host=host, database=name, user=user, password=password)
         self.connection = mysql.connector.connect(host=host, database=name, user=user, password=password)
         self.connection.autocommit = True
 
@@ -24,6 +27,19 @@ class DbFixture:
             cursor.close()
         return list
 
+
+    def get_contact_list(self):
+        list2 = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("select id, firstname, lastname, address, home, mobile, work from addressbook where deprecated='0000-00-00 00:00:00'")
+            for row in cursor:
+                (id, firstname, lastname, address, home, mobile, work) = row
+                list2.append(Param(id=str(id), firstname=firstname, lastname=lastname, address=address, homephone=home,
+                                   mobilephone=mobile, workphone=work))
+        finally:
+            cursor.close()
+        return list2
 
     def destroy(self):
         self.connection.close()
