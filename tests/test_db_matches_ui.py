@@ -14,10 +14,8 @@ def test_group_list(apl, db):
 def test_contact_list(apl, db):
     ui_cont_list = apl.contact.get_contact_list()
     def clean(param):
-        param = list(filter(lambda x: x != "",
-                        map(lambda x: clean(x),
-                              [param.id, param.lastname, param.firstname,  param.address,
-                                    param.all_db_cont_phones, param.all_db_cont_email])))
-        return param
+        return Param(id=param.id,lastname=param.lastname.strip(), firstname=param.firstname.strip(),
+                     address=param.address.strip(),all_db_cont_phones=param.all_db_cont_phones.strip(),
+                     all_db_cont_email=param.all_db_cont_email.strip())
     db_cont_list = map(clean, db.get_contact_list())
     assert sorted(ui_cont_list, key=Param.max_or_id) == sorted(db_cont_list, key=Param.max_or_id)

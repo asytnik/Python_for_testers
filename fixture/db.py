@@ -36,7 +36,7 @@ class DbFixture:
             for row in cursor:
                 (id, firstname, lastname, address, home, mobile, work, email, email2, email3) = row
                 list2.append(Param(id=str(id), firstname=firstname, lastname=lastname, address=address,
-                                   all_db_cont_phones=(home,mobile,work), all_db_cont_email=(email, email2, email3)))
+                                   all_db_cont_phones=(home, mobile, work), all_db_cont_email=(email, email2, email3)))
         finally:
             cursor.close()
         return list2
