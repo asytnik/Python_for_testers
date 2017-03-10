@@ -24,5 +24,5 @@ def merge_email_like_home_page(param):
 def merge_phones_like_home_page(param):
     return "\n".join(filter(lambda x: x != "",
                             map(lambda x: clear(x),
-                                filter(lambda x: x is not None,
-                                   [param.homephone, param.mobilephone, param.workphone]))))
+                                 filter(lambda x: x is not None,
+                                     [param.homephone, param.mobilephone, param.workphone]))))

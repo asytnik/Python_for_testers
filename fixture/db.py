@@ -18,6 +18,7 @@ class DbFixture:
     def get_group_list(self):
         list =[]
         cursor = self.connection.cursor()
+        # cursor = self.cursors()
         try:
             cursor.execute("select group_id, group_name, group_header, group_footer from group_list")
             for row in cursor:
@@ -36,7 +37,7 @@ class DbFixture:
             for row in cursor:
                 (id, firstname, lastname, address, home, mobile, work, email, email2, email3) = row
                 list2.append(Param(id=str(id), firstname=firstname, lastname=lastname, address=address,
-                                   all_db_cont_phones=(home, mobile, work), all_db_cont_email=(email, email2, email3)))
+                                   all_db_cont_phones=[home, mobile, work], all_db_cont_email=[email, email2, email3]))
         finally:
             cursor.close()
         return list2

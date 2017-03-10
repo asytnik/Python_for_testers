@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from model.group import Group
 from model.param import Param
-
+import re
 
 def test_group_list(apl, db):
     ui_list = apl.group.get_group_list()
@@ -13,9 +13,16 @@ def test_group_list(apl, db):
 
 def test_contact_list(apl, db):
     ui_cont_list = apl.contact.get_contact_list()
-    def clean(param):
-        return Param(id=param.id,lastname=param.lastname.strip(), firstname=param.firstname.strip(),
-                     address=param.address.strip(),all_db_cont_phones=param.all_db_cont_phones.strip(),
-                     all_db_cont_email=param.all_db_cont_email.strip())
-    db_cont_list = map(clean, db.get_contact_list())
-    assert sorted(ui_cont_list, key=Param.max_or_id) == sorted(db_cont_list, key=Param.max_or_id)
+    cont_info_from_db = db.get_contact_list()
+    merge_db_cont_list = merge_all_db_cont_info(cont_info_from_db)
+    assert sorted(ui_cont_list, key=Param.max_or_id) == sorted(merge_db_cont_list, key=Param.max_or_id)
+
+def clear(s):
+    return re.sub("[ ]", "", s)
+
+def merge_all_db_cont_info(param):
+    return "\n".join(filter(lambda x: x != "",
+                            map(lambda x: clear(x),
+                                   filter(lambda x: x is not None,
+                                          [param.lastname, param.firstname,param.address,
+                                                param.all_db_cont_phones, param.all_db_cont_email]))))

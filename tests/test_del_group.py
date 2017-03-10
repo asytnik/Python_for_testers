@@ -16,5 +16,5 @@ def test_delete_some_group(apl, db, check_ui):
     assert old_groups == new_groups
     new_groups = map(clean, db.get_group_list())
     if check_ui:
-        # new_groups = map(clean, db.get_group_list()) -- also can insert here --
+        # new_contacts = map(clean, db.get_group_list()) -- also can insert here --
         assert sorted(new_groups, key=Group.id_or_max) == sorted(apl.group.get_group_list(), key=Group.id_or_max)

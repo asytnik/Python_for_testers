@@ -19,7 +19,7 @@ class Param:
         self.email3 = email3
         self.all_email_from_home_page = all_email_from_home_page
         self.id = id
-        self.all_db_cont_phones = all_db_cont_phones
+        self.all_db_cont_phones= all_db_cont_phones
         self.all_db_cont_email = all_db_cont_email
 
     def __repr__(self):
@@ -27,7 +27,9 @@ class Param:
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) \
-           and self.lastname == other.lastname and self.firstname == other.firstname
+           and self.lastname == other.lastname and self.firstname == other.firstname \
+               and self.address == other.address
+
 
     def max_or_id(self):
         if self.id:

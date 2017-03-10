@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
 from model.param import Param
-from random import randrange
+import random
 
 
-def test_del_some_contact(apl):
-    if apl.contact.contact_counter() == 0:
+def test_del_some_contact(apl, db, check_ui):
+    if len(db.get_contact_list()) == 0:
         apl.contact.new_contact_creation(Param(firstname="new ivan", lastname="new ivanov"))
-    old_contacts = apl.contact.get_contact_list()
-    index = randrange(len(old_contacts))
-    apl.contact.del_contact_by_index(index)
-    new_contacts = apl.contact.get_contact_list()
+    old_contacts = db.get_contact_list()
+    cont = random.choice(old_contacts)
+    apl.contact.del_contact_by_id(cont.id)
+    new_contacts = db.get_contact_list()
     assert len(old_contacts) - 1 == len(new_contacts)
-    old_contacts [index:index+1] = []
+    old_contacts.remove(cont)
+    #def clean(param):
+         #return Param (id=param.id, firstname=param.firstname.strip(), lastname=param.lastname.strip())
     assert old_contacts == new_contacts
+    #new_contacts = map(clean, db.get_contact_list())
+    if check_ui:
+        # new_contacts = map(clean, db.get_contact_list()) -- also can insert here --
+        assert sorted(new_contacts, key=Param.max_or_id) == sorted(apl.contact.get_contact_list(), key=Param.max_or_id)
