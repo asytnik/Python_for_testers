@@ -2,7 +2,7 @@
 import re
 
 def test_phones_on_home_page(apl):
-    contact_from_home_page = apl.contact.get_contact_list()[0]
+    contact_from_home_page = apl.contact.get_contact_info()[0]
     contact_from_edit_page = apl.contact.get_contact_info_from_edit_page(0)
     assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_home_page(contact_from_edit_page)
 

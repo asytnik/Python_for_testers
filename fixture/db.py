@@ -15,7 +15,7 @@ class DbFixture:
         self.connection = mysql.connector.connect(host=host, database=name, user=user, password=password)
         self.connection.autocommit = True
 
-    def get_group_list(self):
+    def get_group_info(self):
         list =[]
         cursor = self.connection.cursor()
         # cursor = self.cursors()
@@ -29,7 +29,7 @@ class DbFixture:
         return list
 
 
-    def get_contact_list(self):
+    def get_contact_info(self):
         list2 = []
         cursor = self.connection.cursor()
         try:

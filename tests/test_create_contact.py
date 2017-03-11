@@ -3,9 +3,9 @@ from model.param import Param
 
 def test_create_contact(apl,db,json_contacts):
     param = json_contacts
-    old_contacts = db.get_contact_list()
+    old_contacts = db.get_contact_info()
     apl.contact.new_contact_creation(param)
-    new_contacts = db.get_contact_list()
+    new_contacts = db.get_contact_info()
     # assert len(old_contacts) + 1 == len(new_contacts) -- can delete, no need yet --
     old_contacts.append(param)
     assert sorted(old_contacts, key=Param.max_or_id) == sorted(new_contacts, key=Param.max_or_id)
