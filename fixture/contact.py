@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from model.param import Param
+import re
 
 class ContactHelper:
 
@@ -122,12 +123,12 @@ class ContactHelper:
                 lastname = cell[1].text
                 firstname = cell[2].text
                 address = cell[3].text
-                # cell_5 = row.find_elements_by_tag_name("td") -- alt --
+                # cell_5 = row.find_elements_by_tag_name("td") -- alternative code --
                 all_phones = cell[5].text
-                all_email = cell[4].text
+                all_email = re.sub("[ ]", "", cell[4].text)
                 self.contact_cache.append(Param(id=id, lastname=lastname, firstname=firstname,
-                                                address=address, all_phones_from_home_page=[all_phones],
-                                                all_email_from_home_page=[all_email]))
+                                                address=address, all_phones_from_home_page=(all_phones),
+                                                all_email_from_home_page=(all_email)))
         return (self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
