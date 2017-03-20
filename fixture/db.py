@@ -36,7 +36,7 @@ class DbFixture:
             cursor.execute("select id, firstname, lastname, address, home, mobile, work, email, email2, email3 from addressbook where deprecated='0000-00-00 00:00:00'")
             for row in cursor:
                 (id, firstname, lastname, address, home, mobile, work, email, email2, email3) = row
-                list2.append(Param(id=id, firstname=firstname, lastname=lastname, address=address,
+                list2.append(Param(id=str(id), firstname=firstname, lastname=lastname, address=address,
                                    all_db_cont_phones=[home, mobile, work], all_db_cont_email=[email, email2, email3]))
         finally:
             cursor.close()
