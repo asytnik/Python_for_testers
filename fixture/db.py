@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-# import pymysql.cursors
-import mysql.connector
+import pymysql.cursors
+# import mysql.connector
 from model.group import Group
 from model.param import Param
+
 
 class DbFixture:
 
@@ -11,8 +12,8 @@ class DbFixture:
         self.name = name
         self.user = user
         self.password = password
-        # self.connection = pymysql.connect(host=host, database=name, user=user, password=password)
-        self.connection = mysql.connector.connect(host=host, database=name, user=user, password=password)
+        self.connection = pymysql.connect(host=host, database=name, user=user, password=password)
+        # self.connection = mysql.connector.connect(host=host, database=name, user=user, password=password)
         self.connection.autocommit = True
 
     def get_group_info(self):

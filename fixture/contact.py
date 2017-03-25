@@ -102,7 +102,6 @@ class ContactHelper:
         self.apl.open_home_page()
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
-
     def contact_counter(self):
         wd = self.apl.wd
         self.apl.open_home_page()
@@ -147,3 +146,30 @@ class ContactHelper:
         return Param(id=id, firstname=firstname, lastname=lastname, address=address,
                      homephone=homephone, workphone=workphone, mobilephone=mobilephone,
                      email=email, email2=email2, email3=email3)
+
+    def add_contact_to_group(self,id):
+        wd = self.apl.wd
+        self.select_contact_by_id(id)
+        wd.find_element_by_xpath("//div[@class='right']/select//option[4]").click()
+        wd.find_element_by_name("add").click()
+        self.apl.open_home_page()
+        self.contact_cache = None
+
+    def del_contact_from_group(self, id):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        wd.find_element_by_xpath("//form[@id='right']/select//option[6]").click()
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        wd.find_element_by_name("remove").click()
+        self.apl.open_home_page()
+        self.contact_cache = None
+
+
+
+
+
+
+
+
+
+

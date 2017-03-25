@@ -11,6 +11,7 @@ def test_create_contact(apl,db,json_contacts):
     assert sorted(old_contacts, key=Param.max_or_id) == sorted(new_contacts, key=Param.max_or_id)
 
 
+
 #def test_with_empty_spaces(apl):
 #    old_contacts = apl.contact.get_contact_list()
 #    contact = Param(lastname="", firstname="", address="",homephone="", mobilephone="",
