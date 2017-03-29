@@ -65,6 +65,7 @@ class ContactHelper:
         cell = row.find_elements_by_tag_name("td")
         cell[6].find_element_by_tag_name("a").click()
 
+
     def enter_credentials(self):
         wd = self.apl.wd
         wd.find_element_by_name("submit").click()
@@ -101,6 +102,22 @@ class ContactHelper:
         wd = self.apl.wd
         self.apl.open_home_page()
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
+    def open_contact_to_modify_by_id(self, id):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("img[alt='Edit']").click()
+
+
+    def edit_contact_by_id(self, id, new_contact_data):
+        wd = self.apl.wd
+        self.apl.open_home_page()
+        self.open_contact_to_modify_by_id(id)
+        self.fill_the_form(new_contact_data)
+        wd.find_element_by_name("update").click()
+        self.apl.open_home_page()
+        self.contact_cache = None
 
     def contact_counter(self):
         wd = self.apl.wd
@@ -147,10 +164,12 @@ class ContactHelper:
                      homephone=homephone, workphone=workphone, mobilephone=mobilephone,
                      email=email, email2=email2, email3=email3)
 
-    def add_contact_to_group(self,id):
+    def add_contact_to_group(self, id):
         wd = self.apl.wd
         self.select_contact_by_id(id)
-        wd.find_element_by_xpath("//div[@class='right']/select//option[4]").click()
+        wd.find_element_by_name("to_group").click()
+        # wd.find_element_by_name("to_group[value='525']").click()
+        # wd.find_element_by_xpath("//div[@class='right']/select//option[4]").click()
         wd.find_element_by_name("add").click()
         self.apl.open_home_page()
         self.contact_cache = None

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import pymysql.cursors
-# import mysql.connector
+# import pymysql.cursors
+import mysql.connector
 from model.group import Group
 from model.param import Param
 
@@ -12,14 +12,14 @@ class DbFixture:
         self.name = name
         self.user = user
         self.password = password
-        self.connection = pymysql.connect(host=host, database=name, user=user, password=password)
-        # self.connection = mysql.connector.connect(host=host, database=name, user=user, password=password)
+        # self.connection = pymysql.connect(host=host, database=name, user=user, password=password)
+        self.connection = mysql.connector.connect(host=host, database=name, user=user, password=password)
         self.connection.autocommit = True
 
     def get_group_info(self):
         list =[]
-        cursor = self.connection.cursor()
-        # cursor = self.cursors()
+        cursor = self.connection.cursor()  # -- use with mysql connector method --
+        # cursor = self.cursors() # -- use with pymysql connector method --
         try:
             cursor.execute("select group_id, group_name, group_header, group_footer from group_list")
             for row in cursor:
@@ -32,7 +32,8 @@ class DbFixture:
 
     def get_contact_info(self):
         list2 = []
-        cursor = self.connection.cursor()
+        cursor = self.connection.cursor() # -- use with mysql connector method --
+        # cursor = self.cursors() # -- use with pymysql connector method --
         try:
             cursor.execute("select id, firstname, lastname, address, home, mobile, work, email, email2, email3 from addressbook where deprecated='0000-00-00 00:00:00'")
             for row in cursor:
