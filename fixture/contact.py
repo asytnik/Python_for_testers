@@ -65,7 +65,6 @@ class ContactHelper:
         cell = row.find_elements_by_tag_name("td")
         cell[6].find_element_by_tag_name("a").click()
 
-
     def enter_credentials(self):
         wd = self.apl.wd
         wd.find_element_by_name("submit").click()
@@ -108,7 +107,6 @@ class ContactHelper:
         self.apl.open_home_page()
         self.select_contact_by_id(id)
         wd.find_element_by_css_selector("img[alt='Edit']").click()
-
 
     def edit_contact_by_id(self, id, new_contact_data):
         wd = self.apl.wd
